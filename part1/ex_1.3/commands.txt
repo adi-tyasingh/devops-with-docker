@@ -1,0 +1,5 @@
+docker run -d -it --rm --name devops devopsdockeruh/simple-web-service:ubuntu
+docker exec -it devops bash 
+$ tail -f ./text.log
+
+secret-message: You can find the source code here : https://github.com/docker-hy
