@@ -1,0 +1,6 @@
+starting container: docker run -it --name devops ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+
+in other terminal: 
+docker exec -it devops bash 
+apt-get update 
+apt install curl
