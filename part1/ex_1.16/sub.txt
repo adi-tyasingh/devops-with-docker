@@ -1,0 +1,1 @@
+Deployed application URL: https://django-project-lcc0.onrender.com/

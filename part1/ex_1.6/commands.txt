@@ -1,0 +1,3 @@
+starting container: docker run -it devopsdockeruh/pull_exercise
+password: basics 
+secret: 'this is the secret message'

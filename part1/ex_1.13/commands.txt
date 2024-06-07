@@ -1,0 +1,4 @@
+commands used: 
+to build image: docker build . -t example-backend
+to run image: docker run -p 8080:8080 example-backend
+
