@@ -1,0 +1,2 @@
+Command used: docker compose up -d --scale compute=3
+check if compute is working: curl compute.localtest.me

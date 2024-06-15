@@ -1,0 +1,13 @@
+FROM golang:1.16-alpine AS builder
+WORKDIR /usr/src/app
+COPY . .
+RUN go build -o server
+
+FROM scratch
+WORKDIR /root/
+COPY --from=builder /usr/src/app/server .
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+ENV PORT=8080
+ENV REQUEST_ORIGIN="http://localhost:8080"
+EXPOSE 8080
+CMD ["./server"]

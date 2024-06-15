@@ -1,0 +1,11 @@
+FROM node:16.20.2-alpine 
+EXPOSE 5000
+WORKDIR /usr/src/app
+COPY . .
+RUN npm install \
+    && npm install -g serve \
+    && npm run build \
+    && rm -rf /tmp/* /var/tmp/* /usr/src/app/node_modules /usr/src/app/src \
+    && addgroup -S newuser && adduser -S newuser -G newuser
+USER newuser
+CMD ["serve", "-s", "-l", "5000", "build"]

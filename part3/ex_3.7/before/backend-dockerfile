@@ -1,0 +1,14 @@
+FROM golang:1.16-alpine
+EXPOSE 8080 
+WORKDIR /usr/src/app
+COPY . .
+ENV PORT=8080
+ENV REQUEST_ORIGIN="http://localhost:8080"
+RUN go build -o server \
+    && addgroup -S newuser && adduser -S newuser -G newuser 
+USER newuser
+CMD ["./server"]
+
+# Um so this is intresting I have been using the alpine images since part 1 because the content points out the size diffrence, 
+# I only learnt about the importance of using smaller images now. So yea, I will still try to modify the Dockerfile to Reduce 
+# size by deleting all of the unecessary files and modules using apk

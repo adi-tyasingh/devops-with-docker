@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  yt-dlp-ubuntu:
+    image: singhaditya4/yt-dlp
+    build: . 
+    
